@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  rotatter:
+    image: docker.ciffelia.com/rotatter
+    build: .
+    restart: always
+    environment:
+      - TWITTER_CONSUMER_KEY
+      - TWITTER_CONSUMER_SECRET
+      - TWITTER_ACCESS_TOKEN_KEY
+      - TWITTER_ACCESS_TOKEN_SECRET
