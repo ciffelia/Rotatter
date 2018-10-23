@@ -1,10 +1,14 @@
-version: '3'
+version: '3.7'
 
 services:
   rotatter:
     image: docker.ciffelia.com/rotatter
-    build: .
+    build:
+      context: .
+      cache_from:
+        - docker.ciffelia.com/rotatter
     restart: always
+    init: true
     environment:
       - TWITTER_CONSUMER_KEY
       - TWITTER_CONSUMER_SECRET

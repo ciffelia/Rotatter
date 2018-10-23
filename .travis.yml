@@ -5,10 +5,27 @@ sudo: required
 services:
   - docker
 
+cache: yarn
+
+before_install:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y install docker-ce
+  - sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+  - echo "$DOCKER_PASS" | docker login --username="$DOCKER_USER" --password-stdin docker.ciffelia.com
+
+install:
+  - yarn install --pure-lockfile
+  - docker-compose pull || true
+  - docker pull node:8-alpine
+
 script:
   - yarn test
   - docker-compose build
 
-after_success:
-  - echo $DOCKER_PASS | docker login --username $DOCKER_USER --password-stdin docker.ciffelia.com
-  - docker-compose push
+deploy:
+  provider: script
+  script: docker-compose push
+  on:
+    branch: master
