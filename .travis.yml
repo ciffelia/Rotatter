@@ -21,7 +21,7 @@ install:
   - docker pull node:8-alpine
 
 script:
-  - yarn test
+  - yarn run lint
   - docker-compose build
 
 deploy:

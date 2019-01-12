@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "node src/index.js",
-    "test": "standard",
+    "lint": "standard",
     "fix": "standard --fix"
   },
   "dependencies": {
