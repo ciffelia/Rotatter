@@ -2,7 +2,7 @@
   "name": "rotatter",
   "private": true,
   "scripts": {
-    "start": "node src/main.js",
+    "start": "node src/index.js",
     "test": "standard",
     "fix": "standard --fix"
   },
