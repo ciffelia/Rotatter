@@ -2,11 +2,8 @@ version: '3.7'
 
 services:
   rotatter:
-    image: docker.ciffelia.com/rotatter
-    build:
-      context: .
-      cache_from:
-        - docker.ciffelia.com/rotatter
+    image: ciffelia/rotatter
+    build: .
     restart: always
     init: true
     environment:
