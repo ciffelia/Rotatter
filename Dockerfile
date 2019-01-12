@@ -1,8 +1,11 @@
 FROM node:10-alpine
 
-ADD . /root/rottater
-WORKDIR /root/rottater
+ENV NODE_ENV production
 
-RUN yarn
+ADD package.json yarn.lock /root/Rotatter/
+WORKDIR /root/Rotatter
+RUN yarn --pure-lockfile && yarn cache clean
 
-CMD ["yarn", "start"]
+ADD . /root/Rotatter
+
+CMD ["node", "src/index.js"]
