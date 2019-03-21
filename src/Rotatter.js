@@ -29,7 +29,8 @@ class Rotatter {
   async minutelyTask () {
     const jimpImage = await Jimp.read('./icon.png')
 
-    const deg = new Date().getMinutes() * 6
+    // 分針と同じ角度
+    const deg = 45 - new Date().getMinutes() * 6
 
     jimpImage.rotate(deg, false)
 
