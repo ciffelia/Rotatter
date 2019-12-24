@@ -1,5 +1,5 @@
 # Rotatter
-[![Build Status](https://travis-ci.com/ciffelia/Rotatter.svg?branch=master)](https://travis-ci.com/ciffelia/Rotatter)
-[![Greenkeeper badge](https://badges.greenkeeper.io/ciffelia/Rotatter.svg)](https://greenkeeper.io/)
+[![CI Status](https://github.com/ciffelia/Rotatter/workflows/CI/badge.svg?branch=master)](https://github.com/ciffelia/Rotatter/actions?query=workflow%3ACI+branch%3Amaster)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ciffelia/Rotatter)](https://dependabot.com)
 [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE)  
 Rotate your Twitter icon!
