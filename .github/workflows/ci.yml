@@ -16,8 +16,6 @@ jobs:
 
   build-docker:
     runs-on: ubuntu-18.04
-    env:
-      PORT: 443
     steps:
       - uses: actions/checkout@v1
       - run: docker-compose build
