@@ -7,7 +7,7 @@
     "fix": "standard --fix"
   },
   "dependencies": {
-    "jimp": "^0.9.3",
+    "jimp": "^0.12.1",
     "twit": "^2.2.11"
   },
   "devDependencies": {
