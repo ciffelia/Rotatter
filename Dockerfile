@@ -1,11 +1,17 @@
 FROM node:12.18.0-alpine
 
+# Switch to non-root user
+RUN adduser -D rotatter
+USER rotatter
+WORKDIR /home/rotatter
+
 ENV NODE_ENV production
 
-ADD package.json yarn.lock /root/Rotatter/
-WORKDIR /root/Rotatter
-RUN yarn --pure-lockfile && yarn cache clean
+COPY --chown=rotatter:rotatter ./package.json ./yarn.lock ./
 
-ADD . /root/Rotatter
+RUN yarn install --frozen-lockfile --production && \
+    yarn cache clean
 
-CMD ["node", "src/index.js"]
+COPY --chown=rotatter:rotatter . .
+
+ENTRYPOINT yarn run start
