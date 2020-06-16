@@ -1,8 +1,13 @@
 {
   "name": "rotatter",
   "private": true,
+  "description": "Rotate your Twitter icon!",
+  "author": "Ciffelia <mc.prince.0203@gmail.com> (https://ciffelia.com/)",
+  "repository": "github:ciffelia/Rotatter",
+  "homepage": "https://github.com/ciffelia/Rotatter#readme",
+  "bugs": "https://github.com/ciffelia/Rotatter/issues",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node ./src/index.js",
     "lint": "standard",
     "fix": "standard --fix"
   },
