@@ -2,8 +2,7 @@ version: '3.7'
 
 services:
   rotatter:
-    image: ciffelia/rotatter
-    build: .
+    image: ghcr.io/ciffelia/rotatter
     restart: always
     init: true
     environment:
