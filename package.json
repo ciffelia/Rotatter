@@ -7,13 +7,13 @@
   "homepage": "https://github.com/ciffelia/Rotatter#readme",
   "bugs": "https://github.com/ciffelia/Rotatter/issues",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node ./src/main.js",
     "lint": "standard",
     "fix": "standard --fix"
   },
   "dependencies": {
     "jimp": "^0.13.0",
-    "twit": "^2.2.11"
+    "twitter-lite": "^1.1.0"
   },
   "devDependencies": {
     "standard": "^14.3.4"
