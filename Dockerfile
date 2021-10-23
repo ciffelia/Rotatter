@@ -12,4 +12,4 @@ COPY --chown=rotatter:rotatter . .
 RUN yarn install --immutable && \
     yarn cache clean --mirror
 
-ENTRYPOINT ["node", "./src/main.js"]
+ENTRYPOINT ["yarn", "run", "start"]
