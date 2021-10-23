@@ -7,11 +7,9 @@ WORKDIR /home/rotatter
 
 ENV NODE_ENV production
 
-COPY --chown=rotatter:rotatter ./package.json ./yarn.lock ./
-
-RUN yarn install --frozen-lockfile --production && \
-    yarn cache clean
-
 COPY --chown=rotatter:rotatter . .
+
+RUN yarn install --immutable && \
+    yarn cache clean --mirror
 
 ENTRYPOINT ["node", "./src/main.js"]

@@ -12,7 +12,7 @@ jobs:
           node-version: 14
           check-latest: true
           cache: yarn
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --immutable
       - run: yarn run lint
 
   build-and-push-docker:
